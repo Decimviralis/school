@@ -1,3 +1,4 @@
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: nkurtushin
@@ -7,5 +8,10 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div>
-<p>Pupil</p>
+  <s:form namespace="/" action="showpupil" method="POST" theme="simple">
+    <div class="form-inline">
+      <s:label value="Choose pupil:" cssClass="form-control"/>
+    <%--<s:select list=""--%>
+    </div>
+  </s:form>
 </div>
