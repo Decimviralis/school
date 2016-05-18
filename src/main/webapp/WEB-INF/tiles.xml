@@ -6,28 +6,27 @@
 
 <tiles-definitions>
 
-    <!--<definition name="baseLayout" template=""-->
-    <!--<definition name="baseLayout" template="/common/baseLayout.jsp">-->
-        <!--<put-attribute name="header" value="/common/header.jsp"/>-->
-        <!--<put-attribute name="menu"/>-->
-        <!--<put-attribute name="body"/>-->
-        <!--<put-attribute name="footer"   value="/common/footer.jsp"/>-->
-    <!--</definition>-->
+    <definition name="baseLayout" template="/pages/common/baseLayout.jsp">
+        <put-attribute name="header" value="/pages/common/header.jsp"/>
+        <put-attribute name="menu" value="/pages/common/menu.jsp" />
+        <put-attribute name="body" />
+        <put-attribute name="footer"   value="/pages/common/footer.jsp"/>
+    </definition>
 
-    <!--&lt;!&ndash; EMPLOYEE &ndash;&gt;-->
-    <!--<definition name="employeeLayout" extends="baseLayout">-->
-        <!--<put-attribute name="menu" value="/employee/menubar.jsp" />-->
-    <!--</definition>-->
+    <definition name="pupil" extends="baseLayout">
+        <put-attribute name="body" value="/pages/pupil/content.jsp"/>
+    </definition>
 
-    <!--<definition name="createReportEmployee" extends="employeeLayout">-->
-        <!--<put-attribute name="body"   value="/employee/createReport.jsp"/>-->
-    <!--</definition>-->
+    <definition name="accountant" extends="baseLayout">
+        <put-attribute name="body" value="/pages/accountant/content.jsp"/>
+    </definition>
 
-    <!--<definition name="showReportsEmployee" extends="employeeLayout">-->
-        <!--<put-attribute name="body"   value="/employee/showReports.jsp"/>-->
-    <!--</definition>-->
+    <definition name="act" extends="baseLayout">
+        <put-attribute name="body" value="/pages/act/content.jsp"/>
+    </definition>
 
-    <!--<definition name="showTeamEmployee" extends="employeeLayout">-->
-        <!--<put-attribute name="body" value="/employee/showTeam.jsp" />-->
-    <!--</definition>-->
+    <definition name="receipt" extends="baseLayout">
+        <put-attribute name="body" value="/pages/receipt/content.jsp"/>
+    </definition>
+
 </tiles-definitions>

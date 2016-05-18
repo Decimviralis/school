@@ -1,5 +1,1 @@
-<html>
-<body>
-<h2>Test</h2>
-</body>
-</html>
+<META HTTP-EQUIV="Refresh" CONTENT="0;URL=/enter">
