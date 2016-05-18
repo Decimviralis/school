@@ -1,3 +1,8 @@
 #menubar li {
     display: inline;
 }
+#footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

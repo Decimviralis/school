@@ -7,7 +7,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<ul id="menubar">
+<ul class="nav navbar-header">
     <li>
         <a href="<s:url action="showpupil" namespace="/"/>">Pupil</a>
     </li>

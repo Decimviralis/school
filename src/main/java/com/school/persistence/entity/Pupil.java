@@ -1,26 +1,25 @@
-package com.school.persistence;
+package com.school.persistence.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * Created by Максим on 17.05.2016.
  */
 @Entity
-@Table(name = "accountant")
-public class Accountant extends BaseEntity {
+@Table(name = "pupil")
+public class Pupil extends BaseEntity {
     @Column(name = "name")
     private String name;
 
     @Column(name = "surname")
     private String surname;
 
-    @Column(name = "Salary")
-    private Double salary;
-
-    @Column(name = "Phone_number", unique = true)
+    @Column(name = "phone_number")
     private String phone;
+
+    @OneToOne
+    @JoinColumn(name = "pupil_data")
+    private PupilData pupilData;
 
     public String getName() {
         return name;
@@ -38,14 +37,6 @@ public class Accountant extends BaseEntity {
         this.surname = surname;
     }
 
-    public Double getSalary() {
-        return salary;
-    }
-
-    public void setSalary(Double salary) {
-        this.salary = salary;
-    }
-
     public String getPhone() {
         return phone;
     }
@@ -54,13 +45,21 @@ public class Accountant extends BaseEntity {
         this.phone = phone;
     }
 
+    public PupilData getPupilData() {
+        return pupilData;
+    }
+
+    public void setPupilData(PupilData pupilData) {
+        this.pupilData = pupilData;
+    }
+
     @Override
     public String toString() {
-        return "Accountant{" +
+        return "Pupil{" +
                 "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
-                ", salary=" + salary +
                 ", phone='" + phone + '\'' +
+                ", pupilData=" + pupilData +
                 '}';
     }
 }

@@ -14,10 +14,10 @@
         <property name="hibernate.id.new_generator_mappings">false</property>
         <property name="hibernate.current_session_context_class">org.hibernate.context.internal.ThreadLocalSessionContext</property>
         <!--mappings-->
-        <mapping class="com.school.persistence.Accountant" />
-        <mapping class="com.school.persistence.Act" />
-        <mapping class="com.school.persistence.PupilData" />
-        <mapping class="com.school.persistence.Pupil" />
-        <mapping class="com.school.persistence.Receipt"/>
+        <mapping class="com.school.persistence.entity.Accountant" />
+        <mapping class="com.school.persistence.entity.Act" />
+        <mapping class="com.school.persistence.entity.PupilData" />
+        <mapping class="com.school.persistence.entity.Pupil" />
+        <mapping class="com.school.persistence.entity.Receipt"/>
     </session-factory>
 </hibernate-configuration>

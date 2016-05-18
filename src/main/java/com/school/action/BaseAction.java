@@ -20,7 +20,6 @@ public class BaseAction extends ActionSupport {
     })
     @Override
     public String execute() throws Exception {
-        System.out.println("BaseAction");
         return SUCCESS;
     }
 }

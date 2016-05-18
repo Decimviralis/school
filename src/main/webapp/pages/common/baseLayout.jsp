@@ -10,12 +10,18 @@
 <html>
 <head>
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
     <title></title>
 </head>
 <body>
 <tiles:insertAttribute name="header"/>
 <tiles:insertAttribute name="menu"/>
+<section>
 <tiles:insertAttribute name="body"/>
+</section>
+<section>
 <tiles:insertAttribute name="footer"/>
+</section>
 </body>
 </html>

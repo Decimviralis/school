@@ -1,4 +1,4 @@
-package com.school.persistence;
+package com.school.persistence.entity;
 
 import javax.persistence.*;
 

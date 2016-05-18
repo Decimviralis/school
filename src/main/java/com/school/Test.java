@@ -1,9 +1,7 @@
 package com.school;
 
-import com.school.persistence.*;
+import com.school.persistence.entity.Receipt;
 import org.hibernate.Session;
-
-import java.util.Date;
 
 /**
  * Created by Максим on 17.05.2016.
