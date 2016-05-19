@@ -1,6 +1,8 @@
 package com.school.action;
 
 import com.opensymphony.xwork2.ActionSupport;
+import com.school.HibernateUtils;
+import com.school.persistence.IDatabaseRequest;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Namespace;
 import org.apache.struts2.convention.annotation.ParentPackage;
@@ -21,5 +23,17 @@ public class BaseAction extends ActionSupport {
     @Override
     public String execute() throws Exception {
         return SUCCESS;
+    }
+
+    protected void executeDatabaseRequest(IDatabaseRequest request) throws Exception{
+        try {
+            HibernateUtils.getInstance().beginTransaction();
+            request.execute();
+            HibernateUtils.getInstance().commitTransaction();
+        }catch (Exception e) {
+            HibernateUtils.getInstance().rollbackTransaction();
+            System.err.println("error");
+            throw e;
+        }
     }
 }

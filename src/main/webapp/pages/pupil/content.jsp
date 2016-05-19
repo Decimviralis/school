@@ -8,10 +8,50 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div>
-  <s:form namespace="/" action="showpupil" method="POST" theme="simple">
-    <div class="form-inline">
-      <s:label value="Choose pupil:" cssClass="form-control"/>
-    <%--<s:select list=""--%>
-    </div>
-  </s:form>
+    <s:form namespace="/" action="showpupil" method="POST" theme="simple">
+        <div class="form-inline">
+            <s:label value="Choose pupil:" for="chosen.id"/>
+            <s:select list="pupils" name="chosenId" cssClass="form-control"
+                      listKey="id" listValue="%{name + ' ' + surname}" headerKey="null" headerValue="All"/>
+            <s:submit type="button" value="submit" cssClass="btn btn-default"/>
+        </div>
+    </s:form>
+    <s:if test="chosen!=null">
+        <table class="table">
+            <tr>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Phone</th>
+                <th>Age</th>
+                <th>Grade</th>
+            </tr>
+            <tr>
+                <td><s:property value="chosen.name"/></td>
+                <td><s:property value="chosen.surname"/></td>
+                <td><s:property value="chosen.phone"/></td>
+                <td><s:property value="chosen.pupilData.age"/></td>
+                <td><s:property value="chosen.pupilData.grade"/></td>
+            </tr>
+        </table>
+    </s:if>
+    <s:else>
+        <table class="table">
+            <tr>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Phone</th>
+                <th>Age</th>
+                <th>Grade</th>
+            </tr>
+            <s:iterator value="pupils">
+                <tr>
+                    <td><s:property value="name"/></td>
+                    <td><s:property value="surname"/></td>
+                    <td><s:property value="phone"/></td>
+                    <td><s:property value="pupilData.age"/></td>
+                    <td><s:property value="pupilData.grade"/></td>
+                </tr>
+            </s:iterator>
+        </table>
+    </s:else>
 </div>

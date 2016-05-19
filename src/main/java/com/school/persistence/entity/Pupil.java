@@ -7,6 +7,9 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "pupil")
+@NamedQueries(value = {
+        @NamedQuery(name = "Pupil.All", query = "from Pupil ")
+})
 public class Pupil extends BaseEntity {
     @Column(name = "name")
     private String name;
