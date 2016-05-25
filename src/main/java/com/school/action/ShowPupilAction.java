@@ -19,22 +19,30 @@ import java.util.List;
 @Namespace("/")
 @ParentPackage("action")
 public class ShowPupilAction extends BaseAction implements Preparable {
+    public static final Long ALL_ID = -1L;
     private List<Pupil> pupils = new ArrayList<>();
     private Long chosenId;
     private Pupil chosen;
 
     @Action(value = "showpupil", results = {
-            @Result(name = SUCCESS, type = "tiles", location = "pupil")
+            @Result(name = SUCCESS, type = "tiles", location = "pupil"),
+            @Result(name = INPUT, type = "tiles", location = "pupil")
     })
     @Override
     public String execute() throws Exception {
         if(chosenId != null) {
-            executeDatabaseRequest(new IDatabaseRequest() {
-                @Override
-                public void execute() {
-                    chosen = PupilManager.getInstance().findById(chosenId);
-                }
-            });
+            try {
+                executeDatabaseRequest(new IDatabaseRequest() {
+                    @Override
+                    public void execute() {
+                        if(!chosenId.equals(ALL_ID)) {
+                            chosen = PupilManager.getInstance().findById(chosenId);
+                        }
+                    }
+                });
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
         return SUCCESS;
     }
