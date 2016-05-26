@@ -1,5 +1,6 @@
-package com.school.action;
+package com.school.action.pupil;
 
+import com.school.action.BaseAction;
 import com.school.persistence.IDatabaseRequest;
 import com.school.persistence.entity.Pupil;
 import com.school.persistence.entity.PupilData;
@@ -16,7 +17,7 @@ import org.apache.struts2.convention.annotation.Result;
  */
 @Namespace("/")
 @ParentPackage("action")
-public class AddPupilAction extends BaseAction{
+public class AddPupilAction extends BaseAction {
     private PupilData data = new PupilData();
     private Pupil pupil = new Pupil();
 

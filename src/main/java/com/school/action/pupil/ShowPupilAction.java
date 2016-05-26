@@ -1,7 +1,8 @@
-package com.school.action;
+package com.school.action.pupil;
 
 import com.opensymphony.xwork2.Preparable;
 import com.school.HibernateUtils;
+import com.school.action.BaseAction;
 import com.school.persistence.IDatabaseRequest;
 import com.school.persistence.entity.Pupil;
 import com.school.persistence.manager.PupilManager;
@@ -19,7 +20,6 @@ import java.util.List;
 @Namespace("/")
 @ParentPackage("action")
 public class ShowPupilAction extends BaseAction implements Preparable {
-    public static final Long ALL_ID = -1L;
     private List<Pupil> pupils = new ArrayList<>();
     private Long chosenId;
     private Pupil chosen;

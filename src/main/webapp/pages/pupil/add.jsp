@@ -31,6 +31,6 @@
       <s:label for="data.grade" value="Grade"/>
       <s:textfield name="data.grade" cssClass="form-control"/>
     </div>
-    <s:submit type="button" value="Submit"/>
+    <s:submit type="button" value="Submit" cssClass="btn btn-success"/>
   </s:form>
 </div>

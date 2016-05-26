@@ -14,6 +14,7 @@ import org.apache.struts2.convention.annotation.Result;
 @Namespace("/")
 @ParentPackage("action")
 public class BaseAction extends ActionSupport {
+    public static final Long ALL_ID = -1L;
 
     @Action(value = "enter", results = {
             @Result(name = SUCCESS, type = "redirectAction", params = {

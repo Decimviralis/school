@@ -25,6 +25,10 @@
         <put-attribute name="body" value="/pages/accountant/content.jsp"/>
     </definition>
 
+    <definition name="addAccountant" extends="baseLayout">
+        <put-attribute name="body" value="/pages/accountant/add.jsp"/>
+    </definition>
+
     <definition name="act" extends="baseLayout">
         <put-attribute name="body" value="/pages/act/content.jsp"/>
     </definition>

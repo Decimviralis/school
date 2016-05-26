@@ -43,6 +43,7 @@
                 <th>Phone</th>
                 <th>Age</th>
                 <th>Grade</th>
+                <th>Delete</th>
             </tr>
             <s:iterator value="pupils">
                 <tr>
@@ -51,6 +52,9 @@
                     <td><s:property value="phone"/></td>
                     <td><s:property value="pupilData.age"/></td>
                     <td><s:property value="pupilData.grade"/></td>
+                    <td><a class="btn btn-danger" href="<s:url action="removepupil" namespace="/">
+                                    <s:param name="pupilId" value="id" />
+                                 </s:url> ">Delete</a></td>
                 </tr>
             </s:iterator>
         </table>

@@ -40,20 +40,15 @@
           <version>2.3.24.1</version>
       </dependency>
       <dependency>
-          <groupId>com.jgeppert.struts2.jquery</groupId>
-          <artifactId>struts2-jquery-plugin</artifactId>
-          <version>3.7.1</version>
-      </dependency>
-      <dependency>
           <groupId>org.apache.struts</groupId>
           <artifactId>struts2-tiles-plugin</artifactId>
           <version>2.3.24.1</version>
       </dependency>
-      <dependency>
-          <groupId>org.apache.struts</groupId>
-          <artifactId>struts2-json-plugin</artifactId>
-          <version>2.3.24.1</version>
-      </dependency>
+      <!--<dependency>-->
+          <!--<groupId>org.apache.struts</groupId>-->
+          <!--<artifactId>struts2-json-plugin</artifactId>-->
+          <!--<version>2.3.24.1</version>-->
+      <!--</dependency>-->
       <dependency>
           <groupId>commons-lang</groupId>
           <artifactId>commons-lang</artifactId>

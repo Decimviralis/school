@@ -1,14 +1,15 @@
 package com.school.persistence.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * Created by Максим on 17.05.2016.
  */
 @Entity
 @Table(name = "accountant")
+@NamedQueries(value = {
+        @NamedQuery(name = "Accountant.all", query = "from Accountant ")
+})
 public class Accountant extends BaseEntity {
     @Column(name = "name")
     private String name;
