@@ -11,7 +11,15 @@
 <head>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-datetimepicker.min.css"/>
+    <link rel="stylesheet" href="/css/bootstrap-toggle.min.css"/>
+    <link rel="stylesheet" href="/css/bootstrap-timepicker.min.css"/>
+    <script type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/js/moment-with-locales.min.js"></script>
     <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap-toggle.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap-timepicker.min.js"></script>
     <title></title>
 </head>
 <body>

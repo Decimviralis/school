@@ -1,8 +1,6 @@
 package com.school.persistence.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 /**
@@ -10,6 +8,9 @@ import java.util.Date;
  */
 @Entity
 @Table(name = "act")
+@NamedQueries(value = {
+        @NamedQuery(name = "Act.all", query = "from Act")
+})
 public class Act extends BaseEntity {
     @Column(name = "Description")
     private String description;

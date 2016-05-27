@@ -33,6 +33,10 @@
         <put-attribute name="body" value="/pages/act/content.jsp"/>
     </definition>
 
+    <definition name="addAct" extends="baseLayout">
+        <put-attribute name="body" value="/pages/act/add.jsp"/>
+    </definition>
+
     <definition name="receipt" extends="baseLayout">
         <put-attribute name="body" value="/pages/receipt/content.jsp"/>
     </definition>
