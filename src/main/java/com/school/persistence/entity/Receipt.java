@@ -7,6 +7,9 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "receipt_of_payment")
+@NamedQueries(value = {
+        @NamedQuery(name = "Receipt.All", query = "from Receipt ")
+})
 public class Receipt extends BaseEntity {
     @Column(name = "Receipt_description")
     private String description;

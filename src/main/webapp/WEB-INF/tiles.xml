@@ -41,4 +41,8 @@
         <put-attribute name="body" value="/pages/receipt/content.jsp"/>
     </definition>
 
+    <definition name="addReceipt" extends="baseLayout">
+        <put-attribute name="body" value="/pages/receipt/add.jsp" />
+    </definition>
+
 </tiles-definitions>
