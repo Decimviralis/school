@@ -24,12 +24,12 @@
       <s:textfield name="pupil.phone" cssClass="form-control"/>
     </div>
     <div class="form-group">
-      <s:label for="data.age" value="Age"/>
-      <s:textfield name="data.age" cssClass="form-control"/>
+      <s:label for="pupil.age" value="Age"/>
+      <s:textfield name="pupil.age" cssClass="form-control"/>
     </div>
     <div class="form-group">
-      <s:label for="data.grade" value="Grade"/>
-      <s:textfield name="data.grade" cssClass="form-control"/>
+      <s:label for="pupil.grade" value="Grade"/>
+      <s:textfield name="pupil.grade" cssClass="form-control"/>
     </div>
     <s:submit type="button" value="Submit" cssClass="btn btn-success"/>
   </s:form>

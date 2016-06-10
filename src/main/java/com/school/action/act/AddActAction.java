@@ -22,6 +22,7 @@ public class AddActAction extends BaseAction {
     private Act act = new Act();
     private String date;
     private String description;
+    private Double cost;
 
     @Action(value = "addact", results = {
             @Result(name = SUCCESS, type = "redirectAction", params = {
@@ -36,6 +37,7 @@ public class AddActAction extends BaseAction {
                 @Override
                 public void execute() {
                     act.setDescription(description);
+                    act.setCost(cost);
                     try {
                         act.setAdoptionDate(DateUtils.parseDate(date, "dd-MM-yyyy"));
                     } catch (ParseException e) {
@@ -58,6 +60,9 @@ public class AddActAction extends BaseAction {
         }
         if(StringUtils.isEmpty(date)) {
             addActionError("empty date");
+        }
+        if(cost == null) {
+            addActionError("empty cost");
         }
         try {
             DateUtils.parseDate(date, "dd-MM-yyyy");
@@ -88,5 +93,13 @@ public class AddActAction extends BaseAction {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Double getCost() {
+        return cost;
+    }
+
+    public void setCost(Double cost) {
+        this.cost = cost;
     }
 }

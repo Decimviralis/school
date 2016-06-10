@@ -22,10 +22,12 @@
       <tr>
         <th>Description</th>
         <th>Adoption date</th>
+        <th>Cost</th>
       </tr>
       <tr>
         <td><s:property value="chosen.description"/></td>
-        <td><s:property value="chosen.adoptionDate"/></td>
+        <td><s:date name="chosen.adoptionDate" format="dd-MM-yyyy"/></td>
+        <td><s:property value="cost"/> </td>
       </tr>
     </table>
   </s:if>
@@ -34,12 +36,14 @@
       <tr>
         <th>Description</th>
         <th>Adoption date</th>
+        <th>Cost</th>
         <th>Delete</th>
       </tr>
       <s:iterator value="acts">
         <tr>
           <td><s:property value="description"/></td>
           <td><s:date name="adoptionDate" format="dd-MM-yyyy"/></td>
+          <td><s:property value="cost" /></td>
           <td>
             <a class="btn btn-danger" href="<s:url action="removeact" namespace="/">
                                     <s:param name="actId" value="id" />

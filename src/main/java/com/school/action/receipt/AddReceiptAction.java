@@ -13,9 +13,11 @@ import com.school.persistence.manager.ActManager;
 import com.school.persistence.manager.PupilManager;
 import com.school.persistence.manager.ReceiptManager;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.time.DateUtils;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Result;
 
+import java.text.ParseException;
 import java.util.List;
 
 /**
@@ -29,6 +31,8 @@ public class AddReceiptAction extends BaseAction implements Preparable{
     private Long actId;
     private Long pupilId;
     private String description;
+    private String date;
+    private Double sum;
 
     public AddReceiptAction() {
     }
@@ -50,6 +54,12 @@ public class AddReceiptAction extends BaseAction implements Preparable{
                     receipt.setAccountant(AccountantManager.getInstance().findById(accountantId));
                     receipt.setAct(ActManager.getInstance().findById(actId));
                     receipt.setPupil(PupilManager.getInstance().findById(pupilId));
+                    try {
+                        receipt.setDate(DateUtils.parseDate(date, "dd-MM-yyyy"));
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
+                    receipt.setSum(sum);
                     ReceiptManager.getInstance().persist(receipt);
                 }
             });
@@ -79,9 +89,18 @@ public class AddReceiptAction extends BaseAction implements Preparable{
         if(pupilId == null) {
             addActionError("empty pupil");
         }
+        if(sum == null) {
+            addActionError("empty sum");
+        }
         if(StringUtils.isEmpty(description)) {
             addActionError("empty description");
         }
+        try {
+            DateUtils.parseDate(date, "dd-MM-yyyy");
+        } catch (ParseException e) {
+            addActionError("wrong date format");
+        }
+
     }
 
     public Long getAccountantId() {
@@ -154,5 +173,21 @@ public class AddReceiptAction extends BaseAction implements Preparable{
         }catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public Double getSum() {
+        return sum;
+    }
+
+    public void setSum(Double sum) {
+        this.sum = sum;
     }
 }

@@ -11,16 +11,16 @@ import javax.persistence.*;
         @NamedQuery(name = "Accountant.all", query = "from Accountant ")
 })
 public class Accountant extends BaseEntity {
-    @Column(name = "name")
+    @Column(name = "name", length = 1000)
     private String name;
 
     @Column(name = "surname")
     private String surname;
 
-    @Column(name = "Salary")
+    @Column(name = "salary")
     private Double salary;
 
-    @Column(name = "Phone_number", unique = true)
+    @Column(name = "phone", unique = true)
     private String phone;
 
     public String getName() {

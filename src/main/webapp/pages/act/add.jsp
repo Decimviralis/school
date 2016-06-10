@@ -11,7 +11,7 @@
     $('#datetimepicker').datetimepicker({
       pickTime: false,
       format: "DD-MM-YYYY",
-      language: 'ru',
+      language: 'ru'
     });
   });
 </script>
@@ -33,6 +33,10 @@
                             <span class="glyphicon-calendar glyphicon"></span>
                         </span>
       </div>
+    </div>
+    <div class="form-group">
+      <s:label for="cost" value="Cost" cssClass="control-label"/>
+      <s:textfield name="cost" cssClass="form-control"/>
     </div>
     <s:submit type="button" value="Submit" cssClass="btn btn-success"/>
   </s:form>

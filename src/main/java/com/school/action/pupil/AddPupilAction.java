@@ -3,8 +3,6 @@ package com.school.action.pupil;
 import com.school.action.BaseAction;
 import com.school.persistence.IDatabaseRequest;
 import com.school.persistence.entity.Pupil;
-import com.school.persistence.entity.PupilData;
-import com.school.persistence.manager.PupilDataManager;
 import com.school.persistence.manager.PupilManager;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.struts2.convention.annotation.Action;
@@ -18,7 +16,6 @@ import org.apache.struts2.convention.annotation.Result;
 @Namespace("/")
 @ParentPackage("action")
 public class AddPupilAction extends BaseAction {
-    private PupilData data = new PupilData();
     private Pupil pupil = new Pupil();
 
 
@@ -33,8 +30,6 @@ public class AddPupilAction extends BaseAction {
         executeDatabaseRequest(new IDatabaseRequest() {
             @Override
             public void execute() {
-                PupilDataManager.getInstance().persist(data);
-                pupil.setPupilData(data);
                 PupilManager.getInstance().persist(pupil);
             }
         });
@@ -51,10 +46,10 @@ public class AddPupilAction extends BaseAction {
 
     @Override
     public void validate() {
-        if (data.getAge() == null) {
+        if (pupil.getAge() == null) {
             addActionError("Empty age");
         }
-        if(StringUtils.isEmpty(data.getGrade())) {
+        if(StringUtils.isEmpty(pupil.getGrade())) {
             addActionError("Empty grade");
         }
         if(StringUtils.isEmpty(pupil.getName())) {
@@ -66,14 +61,6 @@ public class AddPupilAction extends BaseAction {
         if(StringUtils.isEmpty(pupil.getPhone())) {
             addActionError("Empty phone");
         }
-    }
-
-    public PupilData getData() {
-        return data;
-    }
-
-    public void setData(PupilData data) {
-        this.data = data;
     }
 
     public Pupil getPupil() {

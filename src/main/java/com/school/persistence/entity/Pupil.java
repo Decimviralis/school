@@ -17,12 +17,30 @@ public class Pupil extends BaseEntity {
     @Column(name = "surname")
     private String surname;
 
-    @Column(name = "phone_number")
+    @Column(name = "phone")
     private String phone;
 
-    @OneToOne
-    @JoinColumn(name = "pupil_data")
-    private PupilData pupilData;
+    @Column(name = "age")
+    private Integer age;
+
+    @Column(name = "grade")
+    private String grade;
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public String getGrade() {
+        return grade;
+    }
+
+    public void setGrade(String grade) {
+        this.grade = grade;
+    }
 
     public String getName() {
         return name;
@@ -48,21 +66,14 @@ public class Pupil extends BaseEntity {
         this.phone = phone;
     }
 
-    public PupilData getPupilData() {
-        return pupilData;
-    }
-
-    public void setPupilData(PupilData pupilData) {
-        this.pupilData = pupilData;
-    }
-
     @Override
     public String toString() {
         return "Pupil{" +
                 "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", phone='" + phone + '\'' +
-                ", pupilData=" + pupilData +
+                ", age=" + age +
+                ", grade='" + grade + '\'' +
                 '}';
     }
 }

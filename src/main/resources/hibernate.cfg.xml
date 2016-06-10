@@ -21,7 +21,6 @@
         <!--mappings-->
         <mapping class="com.school.persistence.entity.Accountant" />
         <mapping class="com.school.persistence.entity.Act" />
-        <mapping class="com.school.persistence.entity.PupilData" />
         <mapping class="com.school.persistence.entity.Pupil" />
         <mapping class="com.school.persistence.entity.Receipt"/>
     </session-factory>

@@ -12,10 +12,13 @@ import java.util.Date;
         @NamedQuery(name = "Act.all", query = "from Act")
 })
 public class Act extends BaseEntity {
-    @Column(name = "Description")
+    @Column(name = "description")
     private String description;
-    @Column(name = "Adoption_date")
+
+    @Column(name = "adoption_date")
     private Date adoptionDate;
+
+    private Double cost;
 
     public String getDescription() {
         return description;
@@ -38,6 +41,15 @@ public class Act extends BaseEntity {
         return "Act{" +
                 "description='" + description + '\'' +
                 ", adoptionDate=" + adoptionDate +
+                ", cost=" + cost +
                 '}';
+    }
+
+    public Double getCost() {
+        return cost;
+    }
+
+    public void setCost(Double cost) {
+        this.cost = cost;
     }
 }

@@ -30,8 +30,8 @@
                 <td><s:property value="chosen.name"/></td>
                 <td><s:property value="chosen.surname"/></td>
                 <td><s:property value="chosen.phone"/></td>
-                <td><s:property value="chosen.pupilData.age"/></td>
-                <td><s:property value="chosen.pupilData.grade"/></td>
+                <td><s:property value="chosen.age"/></td>
+                <td><s:property value="chosen.grade"/></td>
             </tr>
         </table>
     </s:if>
@@ -50,8 +50,8 @@
                     <td><s:property value="name"/></td>
                     <td><s:property value="surname"/></td>
                     <td><s:property value="phone"/></td>
-                    <td><s:property value="pupilData.age"/></td>
-                    <td><s:property value="pupilData.grade"/></td>
+                    <td><s:property value="age"/></td>
+                    <td><s:property value="grade"/></td>
                     <td><a class="btn btn-danger" href="<s:url action="removepupil" namespace="/">
                                     <s:param name="pupilId" value="id" />
                                  </s:url> ">Delete</a></td>
